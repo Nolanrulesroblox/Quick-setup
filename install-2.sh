@@ -5,29 +5,44 @@ NC='\033[0m' # No Color
 GREEN='\033[1;32m'
 BLUE='\033[1;34m'
 printf "Welcome to the Installer! "
-echo "-"
+echo ""
+echo ""
 sleep 2
 printf "1: Github (with git) 2: Wine x86-64 3: Docker 4: Mysql-server" 
-echo "-"
+echo ""
+echo ""
 printf "5: Python 6: PHP with MysqlI, PDO and XML 7: Wire Shark" 
-echo "-"
-printf "8: virutalbox 9: Glances 10: dolphin 11: VSCode (with snap)" 
-echo "-"
+echo ""
+echo ""
+printf "8: Filezilla 9: Apache2 10: dolphin 11: VSCode (with snap)" 
+echo ""
+echo ""
+printf "8: Filezilla 9: Apache2 10: dolphin 11: VSCode (with snap)" 
+echo ""
+echo ""
 printf "**Note: SSH is always installed.**" 
-echo "-"
+echo ""
+echo ""
+echo "to Cancel, Press C"
+echo ""
 read -p "Please Choose from the list Shown: (1 - 11) " answer 
+if [[ $answer = c ]]; then
+    # Install
+    echo "No system changes."
+    exit
+fi
 sleep 0
 echo "Please wait while installing Common dependencies"
 sleep 2
 # common dependencies
-sudo apt update
-  sudo apt autoremove
-  apt autoremove --purge
-  sudo apt update
-  sudo apt-get install update
-  sudo apt-get upgrade
-sudo apt-get install ssh software-properties-common -y
-sudo apt update
+    sudo apt update
+    sudo apt autoremove
+    sudo apt autoremove --purge
+    sudo apt update
+    sudo apt-get install update
+    sudo apt-get upgrade
+    sudo apt-get install ssh software-properties-common -y
+    sudo apt update
 # end of dependencies
 clear
 echo "Dependencies Installed successful!"
@@ -149,6 +164,7 @@ if [[ $answer = 5 ]]; then
     exit
     fi
 fi
+#php
 if [[ $answer = 6 ]]; then
     # Install
     echo "Installing: PHP with MysqlI, PDO and XML"
@@ -157,6 +173,145 @@ if [[ $answer = 6 ]]; then
     sudo apt-get install php php-mysqli php-xml php-pdo -y
     clear
     echo "PHP with MysqlI, PDO and XML Install successful!"
+    # Restart
+    read -p "Want to install another item? y/n " answer
+    if [[ $answer = y ]]; then
+    clear
+    sudo bash install-2.sh
+    fi
+    # end
+    if [[ $answer = n ]] ; then
+    clear
+    echo "Thank you for using! :D"
+    sleep 5
+    exit
+    fi
+fi
+#wire shark
+if [[ $answer = 7 ]]; then
+    # Install
+    echo "Installing: Wireshark"
+    sleep 2
+    echo ""
+    sudo apt-get install wireshark -y
+    clear
+    echo "Wireshark Install successful!"
+    # Restart
+    read -p "Want to install another item? y/n " answer
+    if [[ $answer = y ]]; then
+    clear
+    sudo bash install-2.sh
+    fi
+    # end
+    if [[ $answer = n ]] ; then
+    clear
+    echo "Thank you for using! :D"
+    sleep 5
+    exit
+    fi
+fi
+#filezilla
+if [[ $answer = 8 ]]; then
+    # Install
+    echo "Installing: Filezilla"
+    sleep 2
+    echo ""
+    sudo apt-get install filezilla -y
+    clear
+    echo "Filezilla Install successful!"
+    # Restart
+    read -p "Want to install another item? y/n " answer
+    if [[ $answer = y ]]; then
+    clear
+    sudo bash install-2.sh
+    fi
+    # end
+    if [[ $answer = n ]] ; then
+    clear
+    echo "Thank you for using! :D"
+    sleep 5
+    exit
+    fi
+fi
+#apache2
+if [[ $answer = 9 ]]; then
+    # Install
+    echo "Installing: Apache2"
+    sleep 2
+    echo ""
+    sudo apt-get install wireshark -y
+    clear
+    echo "Apache2 Install successful!"
+    # php for apache2
+    read -p "Will you need php? y/n " answer
+    if [[ $answer = y ]]; then
+    clear
+        sudo apt-get install php php-mysqli php-xml php-pdo -y
+    clear
+    echo "PHP install successful"
+    #php install item1
+        read -p "Want to install another item? y/n " answer
+    if [[ $answer = y ]]; then
+    clear
+    sudo bash install-2.sh
+    fi
+    # end
+    if [[ $answer = n ]] ; then
+    clear
+    echo "Thank you for using! :D"
+    sleep 5
+    exit
+    fi
+    fi
+    # end
+    if [[ $answer = n ]] ; then
+    read -p "Want to install another item? y/n " answer
+    if [[ $answer = y ]]; then
+    clear
+    sudo bash install-2.sh
+    fi
+    # end
+    if [[ $answer = n ]] ; then
+    clear
+    echo "Thank you for using! :D"
+    sleep 5
+    exit
+    fi
+    fi
+fi
+#dolphin
+if [[ $answer = 10 ]]; then
+    # Install
+    echo "Installing: dolphin"
+    sleep 2
+    echo ""
+    sudo apt-get install dolphin -y
+    clear
+    echo "dolphin Install successful!"
+    # Restart
+    read -p "Want to install another item? y/n " answer
+    if [[ $answer = y ]]; then
+    clear
+    sudo bash install-2.sh
+    fi
+    # end
+    if [[ $answer = n ]] ; then
+    clear
+    echo "Thank you for using! :D"
+    sleep 5
+    exit
+    fi
+fi
+#Vscode
+if [[ $answer = 11 ]]; then
+    # Install
+    echo "Installing: VScode and Snapd"
+    sleep 2
+    echo ""
+    sudo apt-get install snapd -y
+    sudo snap install code --classic
+    clear
+    echo "VScode and Snapd Install successful!"
     # Restart
     read -p "Want to install another item? y/n " answer
     if [[ $answer = y ]]; then
