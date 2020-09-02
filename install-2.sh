@@ -35,14 +35,14 @@ sleep 0
 echo "Please wait while installing Common dependencies"
 sleep 2
 # common dependencies
-    sudo apt update
-    sudo apt autoremove
-    sudo apt autoremove --purge
-    sudo apt update
-    sudo apt-get install update
-    sudo apt-get upgrade
+    sudo apt update -y
+    sudo apt autoremove -y
+    sudo apt autoremove --purge -y
+    sudo apt update -y
+    sudo apt-get install update -y
+    sudo apt-get upgrade -y
     sudo apt-get install ssh software-properties-common -y
-    sudo apt update
+    sudo apt update -y
 # end of dependencies
 clear
 echo "Dependencies Installed successful!"
