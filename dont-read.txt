@@ -1,0 +1,7 @@
+still need to add
+  sudo apt install sl
+  sudp apt install cowsay
+  sudo apt-get install xscreensaver xscreensaver-gl-extra xscreensaver-data-extra -y
+    sudo apt-get install glances -y
+  sudo apt-get install grub2 -y
+  do apt-get install virutalbox -y

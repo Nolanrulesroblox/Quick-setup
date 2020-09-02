@@ -17,7 +17,7 @@ echo ""
 printf "8: Filezilla 9: Apache2 10: dolphin 11: VSCode (with snap)" 
 echo ""
 echo ""
-printf "8: Filezilla 9: Apache2 10: dolphin 11: VSCode (with snap)" 
+printf "12: mate terminal  9: Apache2 10: dolphin 11: VSCode (with snap)" 
 echo ""
 echo ""
 printf "**Note: SSH is always installed.**" 
@@ -312,6 +312,30 @@ if [[ $answer = 11 ]]; then
     sudo snap install code --classic
     clear
     echo "VScode and Snapd Install successful!"
+    # Restart
+    read -p "Want to install another item? y/n " answer
+    if [[ $answer = y ]]; then
+    clear
+    sudo bash install-2.sh
+    fi
+    # end
+    if [[ $answer = n ]] ; then
+    clear
+    echo "Thank you for using! :D"
+    sleep 5
+    exit
+    fi
+fi
+#mate
+if [[ $answer = 12 ]]; then
+    # Install
+    echo "Installing: Mate Terminal"
+    sleep 2
+    echo ""
+    sudo apt-apt-repository ppa:ubuntu-mate-dev/precise-mate -y
+    sudo apt-get install mate-terminal -y
+    clear
+    echo "Mate Terminal Install successful!"
     # Restart
     read -p "Want to install another item? y/n " answer
     if [[ $answer = y ]]; then
