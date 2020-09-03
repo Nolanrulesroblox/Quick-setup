@@ -14,3 +14,7 @@ install-2.sh
 
 
 #### note this is inst for everyone. this is what i use most often.
+
+# -
+
+<h6>known issues, Cowsay isnt working.</h6>
