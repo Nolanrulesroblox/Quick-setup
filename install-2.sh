@@ -17,7 +17,7 @@ echo ""
 printf "8: Filezilla 9: Apache2 10: dolphin 11: VSCode (with snap)" 
 echo ""
 echo ""
-printf "12: mate terminal  9: Apache2 10: dolphin 11: VSCode (with snap)" 
+printf "9: Apache2 10: dolphin 11: VSCode (with snap) 12: mate terminal" 
 echo ""
 echo ""
 printf "**Note: SSH is always installed.**" 
@@ -336,6 +336,30 @@ if [[ $answer = 12 ]]; then
     sudo apt-get install mate-terminal -y
     clear
     echo "Mate Terminal Install successful!"
+    # Restart
+    read -p "Want to install another item? y/n " answer
+    if [[ $answer = y ]]; then
+    clear
+    sudo bash install-2.sh
+    fi
+    # end
+    if [[ $answer = n ]] ; then
+    clear
+    echo "Thank you for using! :D"
+    sleep 5
+    exit
+    fi
+fi
+#cowsay
+if [[ $answer = cowsay ]]; then
+    # Install
+    echo "Installing: SKJAONFWK"
+    sleep 2
+    echo ""
+    sudo apt-get install cowsay -y
+    clear
+    echo "Whats up :D" | cowsay
+    sleep 5
     # Restart
     read -p "Want to install another item? y/n " answer
     if [[ $answer = y ]]; then
